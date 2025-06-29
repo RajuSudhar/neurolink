@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/juspay/neurolink/compare/v2.0.0...v2.1.0) (2025-06-29)
+
+
+### Features
+
+* **timeout:** add comprehensive timeout support for all AI providers ([8610f4a](https://github.com/juspay/neurolink/commit/8610f4ade418345b0395ab72af6e675f6eec6f93))
+
 # [2.0.0](https://github.com/juspay/neurolink/compare/v1.11.3...v2.0.0) (2025-06-28)
 
 
