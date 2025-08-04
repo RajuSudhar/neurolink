@@ -200,6 +200,6 @@ extra:
   #   property: G-XXXXXXXXXX
   generator: false
 
-# Copyright
+# Copyright after GitHub Pages source change
 copyright: |
   &copy; 2025 <a href="https://juspay.io"  target="_blank" rel="noopener">Juspay Technologies</a>
