@@ -1,3 +1,10 @@
+## [7.7.1](https://github.com/juspay/neurolink/compare/v7.7.0...v7.7.1) (2025-08-11)
+
+
+### Bug Fixes
+
+* **providers:** resolve ESLint errors and improve validation in Vertex AI health checker ([a5822ee](https://github.com/juspay/neurolink/commit/a5822eee3f8b6beaf3d2168ebb8888a6beaa5cb4))
+
 # [7.7.0](https://github.com/juspay/neurolink/compare/v7.6.1...v7.7.0) (2025-08-10)
 
 ### Features
