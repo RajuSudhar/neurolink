@@ -1,3 +1,9 @@
+## [7.10.3](https://github.com/juspay/neurolink/compare/v7.10.2...v7.10.3) (2025-08-13)
+
+### Bug Fixes
+
+- **(ci):** make comment posting non-blocking for external contributor PRs ([f40b3f7](https://github.com/juspay/neurolink/commit/f40b3f75a8162df41461ef5ca1b2bb97d62719c2))
+
 ## [7.10.2](https://github.com/juspay/neurolink/compare/v7.10.1...v7.10.2) (2025-08-13)
 
 ### Bug Fixes
