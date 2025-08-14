@@ -1,3 +1,9 @@
+## [7.11.1](https://github.com/juspay/neurolink/compare/v7.11.0...v7.11.1) (2025-08-14)
+
+### Bug Fixes
+
+- **(ci):** add external contributor detection to GitHub Copilot PR Review workflow ([c7d9f2c](https://github.com/juspay/neurolink/commit/c7d9f2cf8d1d0079b34e443a935a84d4a53adf9a))
+
 ## [7.11.0](https://github.com/juspay/neurolink/compare/v7.10.3...v7.11.0) (2025-08-14)
 
 ### Features
