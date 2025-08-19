@@ -1,3 +1,9 @@
+## [7.20.0](https://github.com/juspay/neurolink/compare/v7.19.0...v7.20.0) (2025-08-19)
+
+### Features
+
+- **(cli):** add --version flag to display package version ([632eb7c](https://github.com/juspay/neurolink/commit/632eb7ca93024dd055dc626951c5a05153d4eda7))
+
 ## [7.19.0](https://github.com/juspay/neurolink/compare/v7.18.0...v7.19.0) (2025-08-19)
 
 ### Features
