@@ -43,8 +43,36 @@ export const PROVIDERS = {
 export type ProviderName = keyof typeof PROVIDERS;
 
 /**
+ * Type for provider class names
+ */
+export type ProviderClassName = (typeof PROVIDERS)[ProviderName];
+
+/**
  * List of all available provider names
  */
 export const AVAILABLE_PROVIDERS: ProviderName[] = Object.keys(
   PROVIDERS,
 ) as ProviderName[];
+
+/**
+ * List of all provider class names
+ */
+export const PROVIDER_CLASS_NAMES: ProviderClassName[] = Object.values(
+  PROVIDERS,
+) as ProviderClassName[];
+
+/**
+ * Type guard to check if a string is a valid provider name
+ */
+export function isValidProviderName(name: string): name is ProviderName {
+  return AVAILABLE_PROVIDERS.includes(name as ProviderName);
+}
+
+/**
+ * Get provider class name from provider key
+ */
+export function getProviderClassName(
+  providerName: ProviderName,
+): ProviderClassName {
+  return PROVIDERS[providerName];
+}
