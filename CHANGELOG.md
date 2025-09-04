@@ -1,3 +1,9 @@
+## [7.33.2](https://github.com/juspay/neurolink/compare/v7.33.1...v7.33.2) (2025-09-04)
+
+### Bug Fixes
+
+- **(latency):** Reduced Tool Latency via Concurrent Server Init ([eb36fc9](https://github.com/juspay/neurolink/commit/eb36fc9a0ba32bb9b23c0ea163aadf2aa918d323))
+
 ## [7.33.1](https://github.com/juspay/neurolink/compare/v7.33.0...v7.33.1) (2025-09-03)
 
 ## [7.33.0](https://github.com/juspay/neurolink/compare/v7.32.0...v7.33.0) (2025-09-03)
