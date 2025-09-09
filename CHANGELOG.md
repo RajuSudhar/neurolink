@@ -1,3 +1,9 @@
+## [7.35.0](https://github.com/juspay/neurolink/compare/v7.34.0...v7.35.0) (2025-09-09)
+
+### Features
+
+- **(cli):** Add interactive provider setup wizard ([50ee963](https://github.com/juspay/neurolink/commit/50ee9631ea88e63cb2d39c1ab792fc015402bb49))
+
 ## [7.34.0](https://github.com/juspay/neurolink/compare/v7.33.4...v7.34.0) (2025-09-09)
 
 ### Features
