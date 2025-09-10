@@ -14,7 +14,7 @@ import type { GenerateOptions } from "../types/generateTypes.js";
 import type {
   NeuroLinkMCPTool,
   NeuroLinkExecutionContext,
-} from "../mcp/factory.js";
+} from "../types/mcpTypes.js";
 import { SYSTEM_LIMITS } from "../core/constants.js";
 import { isNonNullObject } from "./typeUtils.js";
 
