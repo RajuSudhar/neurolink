@@ -1,3 +1,9 @@
+## [7.38.0](https://github.com/juspay/neurolink/compare/v7.37.1...v7.38.0) (2025-09-14)
+
+### Features
+
+- **(memory):** Add support to store tool history in redis ([93d3223](https://github.com/juspay/neurolink/commit/93d32236475bfbd9f3c4017ee47c54729f681350))
+
 ## [7.37.1](https://github.com/juspay/neurolink/compare/v7.37.0...v7.37.1) (2025-09-13)
 
 ### Bug Fixes
