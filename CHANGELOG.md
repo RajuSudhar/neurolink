@@ -1,3 +1,9 @@
+## [7.42.0](https://github.com/juspay/neurolink/compare/v7.41.4...v7.42.0) (2025-09-23)
+
+### Features
+
+- **(middleware):** robust bad word filtering in guardrails and correct stream usage ([d396797](https://github.com/juspay/neurolink/commit/d396797640832a373b386a7c550ec406e129d2d2))
+
 ## [7.41.4](https://github.com/juspay/neurolink/compare/v7.41.3...v7.41.4) (2025-09-21)
 
 ### Bug Fixes
