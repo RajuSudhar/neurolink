@@ -1,3 +1,9 @@
+## [7.45.0](https://github.com/juspay/neurolink/compare/v7.44.0...v7.45.0) (2025-09-24)
+
+### Features
+
+- **(provider):** Add support to provide region while streaming or generating for few providers ([a0a5bed](https://github.com/juspay/neurolink/commit/a0a5bed2bba4118dde149713708e36d4d29e1aae))
+
 ## [7.44.0](https://github.com/juspay/neurolink/compare/v7.43.0...v7.44.0) (2025-09-24)
 
 ### Features
