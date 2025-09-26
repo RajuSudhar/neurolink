@@ -1,3 +1,9 @@
+## [7.47.1](https://github.com/juspay/neurolink/compare/v7.47.0...v7.47.1) (2025-09-26)
+
+### Bug Fixes
+
+- **(tools):** Unregistered tools getting called ([45fd67a](https://github.com/juspay/neurolink/commit/45fd67af418b5e458ce6a261a7891234a8d489b8))
+
 ## [7.47.0](https://github.com/juspay/neurolink/compare/v7.46.0...v7.47.0) (2025-09-25)
 
 ### Features
