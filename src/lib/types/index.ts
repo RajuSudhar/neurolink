@@ -165,3 +165,37 @@ export * from "./evaluationProviders.js";
 
 // SDK Types - Core types for external developers
 export * from "./sdkTypes.js";
+
+// Utilities Types - Utility module types (selective export to avoid conflicts)
+export type {
+  PerformanceMetric,
+  PerformanceData,
+  ProviderHealthResult,
+  ModelRoutingResult,
+  LoggerConfig,
+  RedisConnectionConfig,
+  OptionsConversionResult,
+  PromptRedactionConfig,
+  MessageBuilderOptions,
+} from "./utilities.js";
+
+// Middleware Types - Middleware system types
+export * from "./middleware.js";
+
+// Enhanced MCP Types - Extended MCP functionality types (selective export to avoid conflicts)
+export type {
+  ToolHandler,
+  ToolDiscoveryResult,
+  DiscoveredTool,
+  MCPClientFactoryConfig,
+  MCPClientInstance,
+  ToolValidationResult,
+  ExternalServerManagerConfig,
+  ServerHealthResult,
+  MCPContract,
+  AIWorkflowToolConfig,
+  AIAnalysisResult,
+} from "./mcpTypes.js";
+
+// Constants Types - Constants module types
+export * from "./constants.js";

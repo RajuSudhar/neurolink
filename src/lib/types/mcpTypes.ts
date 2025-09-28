@@ -3,6 +3,7 @@
  * Enables various integrations to register tools directly
  */
 
+import { CircuitBreakerConfig } from "../mcp/mcpCircuitBreaker.js";
 import type { JsonValue, JsonObject } from "./common.js";
 
 /**
@@ -57,7 +58,7 @@ export type MCPServerCategory =
  * MCP 2024-11-05 specification compliant
  * Replaces both MCPServerInfo and MCPServerConfig
  */
-export interface MCPServerInfo {
+export type MCPServerInfo = {
   // Core MCP-compliant fields (always required)
   id: string;
   name: string;
@@ -102,12 +103,12 @@ export interface MCPServerInfo {
     tags?: string[];
     [key: string]: unknown;
   };
-}
+};
 
 /**
  * MCP Server Status for CLI Operations - High Reusability
  */
-export interface MCPServerStatus {
+export type MCPServerStatus = {
   /** Whether MCP is initialized */
   mcpInitialized: boolean;
   /** Total number of servers */
@@ -132,12 +133,12 @@ export interface MCPServerStatus {
   availableTools: MCPToolInfo[];
   /** Server registry entries */
   serverRegistry?: Record<string, MCPServerInfo>;
-}
+};
 
 /**
  * Auto-discovered MCP Server - High Reusability
  */
-export interface MCPDiscoveredServer {
+export type MCPDiscoveredServer = {
   name: string;
   status: MCPServerConnectionStatus;
   source: string;
@@ -147,12 +148,12 @@ export interface MCPDiscoveredServer {
   args?: string[];
   env?: Record<string, string>;
   metadata?: MCPServerMetadata;
-}
+};
 
 /**
  * Connected MCP Server - High Reusability
  */
-export interface MCPConnectedServer {
+export type MCPConnectedServer = {
   name: string;
   transport: MCPTransportType;
   connected: boolean;
@@ -161,12 +162,12 @@ export interface MCPConnectedServer {
   lastSeen?: Date;
   connectionTime?: Date;
   metadata?: MCPServerMetadata;
-}
+};
 
 /**
  * MCP Tool Information - High Reusability
  */
-export interface MCPToolInfo {
+export type MCPToolInfo = {
   name: string;
   description: string;
   serverId: string;
@@ -175,7 +176,7 @@ export interface MCPToolInfo {
   inputSchema?: JsonObject;
   outputSchema?: JsonObject;
   metadata?: MCPToolMetadata;
-}
+};
 
 /**
  * MCP Executable Tool - Tool with execution capability
@@ -214,9 +215,9 @@ export type MCPToolMetadata = {
 export type MCPServerRegistryEntry = [string, MCPServerInfo];
 
 /**
- * Unified MCP Registry interface
+ * Unified MCP Registry type
  */
-export interface UnifiedMCPRegistry {
+export type UnifiedMCPRegistry = {
   /**
    * Register an in-memory server
    */
@@ -243,4 +244,172 @@ export interface UnifiedMCPRegistry {
    * Check if connected to a server
    */
   isConnected(serverId: string): boolean;
-}
+};
+
+// ============================================================================
+// Enhanced MCP Types (formerly in mcpEnhanced.ts)
+// ============================================================================
+
+/**
+ * MCP tool registry entry
+ */
+export type ToolRegistryEntry = {
+  name: string;
+  description: string;
+  inputSchema: import("./common.js").UnknownRecord;
+  handler: ToolHandler;
+  metadata?: ToolMetadata;
+  timeout?: number;
+  retries?: number;
+};
+
+/**
+ * Tool handler function type
+ */
+export type ToolHandler = (
+  args: import("./common.js").UnknownRecord,
+) => Promise<unknown>;
+
+/**
+ * Tool metadata for registry
+ */
+export type ToolMetadata = {
+  version?: string;
+  author?: string;
+  tags?: string[];
+  category?: string;
+  deprecated?: boolean;
+  experimental?: boolean;
+};
+
+/**
+ * Tool discovery result
+ */
+export type ToolDiscoveryResult = {
+  tools: DiscoveredTool[];
+  errors: string[];
+  warnings: string[];
+  timestamp: number;
+};
+
+/**
+ * Discovered tool information
+ */
+export type DiscoveredTool = {
+  name: string;
+  description: string;
+  inputSchema: import("./common.js").UnknownRecord;
+  source: "builtin" | "external" | "mcp";
+  serverId?: string;
+  serverName?: string;
+  capabilities?: string[];
+};
+
+/**
+ * MCP client factory configuration
+ */
+export type MCPClientFactoryConfig = {
+  transport: "stdio" | "websocket" | "sse";
+  command?: string;
+  args?: string[];
+  url?: string;
+  timeout?: number;
+  retries?: number;
+  env?: Record<string, string>;
+};
+
+/**
+ * MCP client instance
+ */
+export type MCPClientInstance = {
+  id: string;
+  name: string;
+  transport: string;
+  status: "connected" | "disconnected" | "error";
+  tools: DiscoveredTool[];
+  lastActivity: number;
+  errorCount: number;
+};
+
+/**
+ * Flexible tool validation result
+ */
+export type ToolValidationResult = {
+  valid: boolean;
+  tool?: DiscoveredTool;
+  errors: ValidationError[];
+  warnings: string[];
+};
+
+/**
+ * Tool validation error
+ */
+export type ValidationError = {
+  field: string;
+  message: string;
+  severity: "error" | "warning";
+};
+
+/**
+ * External server manager configuration
+ */
+export type ExternalServerManagerConfig = {
+  maxServers: number;
+  healthCheckInterval: number;
+  connectionTimeout: number;
+  maxRetries: number;
+  circuitBreaker: CircuitBreakerConfig;
+};
+
+/**
+ * External server health check result
+ */
+export type ServerHealthResult = {
+  serverId: string;
+  healthy: boolean;
+  responseTime: number;
+  lastCheck: number;
+  error?: string;
+  toolCount: number;
+};
+
+/**
+ * MCP contract type for type-safe operations
+ */
+export type MCPContract = {
+  listTools(): Promise<DiscoveredTool[]>;
+  callTool(
+    name: string,
+    args: import("./common.js").UnknownRecord,
+  ): Promise<unknown>;
+  getToolSchema(name: string): Promise<import("./common.js").UnknownRecord>;
+  healthCheck(): Promise<boolean>;
+};
+
+/**
+ * AI workflow tool configuration
+ */
+export type AIWorkflowToolConfig = {
+  name: string;
+  description: string;
+  model: string;
+  temperature?: number;
+  maxTokens?: number;
+  systemPrompt?: string;
+  outputFormat?: "text" | "json" | "structured";
+};
+
+/**
+ * AI analysis tool result
+ */
+export type AIAnalysisResult = {
+  analysis: string;
+  confidence: number;
+  reasoning: string[];
+  metadata: {
+    model: string;
+    tokensUsed: number;
+    processingTime: number;
+  };
+  structured?: import("./common.js").UnknownRecord;
+};

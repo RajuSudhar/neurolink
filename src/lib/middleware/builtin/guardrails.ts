@@ -1,24 +1,11 @@
 import { generateText } from "ai";
-import type { LanguageModelV1, LanguageModelV1Middleware } from "ai";
+import type { LanguageModelV1Middleware } from "ai";
 import type {
   NeuroLinkMiddleware,
   NeuroLinkMiddlewareMetadata,
 } from "../../types/middlewareTypes.js";
+import type { GuardrailsMiddlewareConfig } from "../../types/middleware.js";
 import { logger } from "../../utils/logger.js";
-
-/**
- * Configuration for the Guardrails middleware.
- */
-export interface GuardrailsMiddlewareConfig {
-  badWords?: {
-    enabled?: boolean;
-    list?: string[];
-  };
-  modelFilter?: {
-    enabled?: boolean;
-    filterModel?: LanguageModelV1;
-  };
-}
 
 /**
  * Create Guardrails AI middleware for content filtering and policy enforcement.

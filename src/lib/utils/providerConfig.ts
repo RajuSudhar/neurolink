@@ -5,17 +5,8 @@
  * Enhanced with format validation and advanced error classification
  */
 
-/**
- * Configuration options for provider validation
- */
-export interface ProviderConfigOptions {
-  providerName: string;
-  envVarName: string;
-  setupUrl: string;
-  description: string;
-  instructions: string[];
-  fallbackEnvVars?: string[]; // For providers with multiple possible env vars
-}
+import { ValidationResult } from "../types/utilities.js";
+import { ProviderConfigOptions } from "../types/providers.js";
 
 /**
  * API key format validation patterns (extracted from advanced validation system)
@@ -53,17 +44,6 @@ export const PROJECT_ID_FORMAT = {
   MAX_LENGTH: 30, // Maximum project ID length
   PATTERN: /^[a-z][a-z0-9-]{4,28}[a-z0-9]$/, // Google Cloud project ID format
 } as const;
-
-/**
- * Enhanced validation result with format checking
- */
-export interface ValidationResult {
-  isValid: boolean;
-  apiKey: string;
-  formatValid?: boolean;
-  errorType?: "missing" | "format" | "config";
-  error?: string;
-}
 
 /**
  * Validates API key format for a specific provider

@@ -4,12 +4,15 @@
  */
 
 import { z } from "zod";
-import type { Result, JsonValue, ErrorInfo } from "./common.js";
-
-/**
- * Commonly used Zod schema type aliases for cleaner type declarations
- */
+import type {
+  ErrorInfo,
+  JsonObject,
+  JsonValue,
+  Result,
+  UnknownRecord,
+} from "./common.js";
 import type { ZodUnknownSchema } from "./typeAliases.js";
+
 export type { ZodUnknownSchema } from "./typeAliases.js";
 export type ZodAnySchema = z.ZodSchema<unknown>;
 export type ZodObjectSchema = z.ZodObject<z.ZodRawShape>;
@@ -23,78 +26,140 @@ export type ToolParameterSchema = ZodUnknownSchema | Record<string, JsonValue>;
 /**
  * Standard tool input parameters
  */
-export interface BaseToolArgs {
+export type BaseToolArgs = {
   [key: string]: JsonValue | undefined;
-}
+};
 
 /**
  * Tool execution arguments with specific common patterns
  */
-export interface ToolArgs extends BaseToolArgs {
+export type ToolArgs = BaseToolArgs & {
   // Common parameter patterns
   input?: JsonValue;
   data?: JsonValue;
   options?: JsonValue;
-}
+};
 
 /**
  * Tool execution metadata
  */
-export interface ToolExecutionMetadata {
+export type ToolExecutionMetadata = {
   requestId?: string;
   startTime?: number;
   version?: string;
   [key: string]: JsonValue | undefined;
-}
+};
 
 /**
  * Tool execution context
  */
-export interface ToolContext {
+export type ToolContext = {
   sessionId?: string;
   userId?: string;
   aiProvider?: string;
   metadata?: ToolExecutionMetadata;
-}
+};
 
 /**
  * Tool execution result metadata
  */
-export interface ToolResultMetadata {
+export type ToolResultMetadata = {
   toolName?: string;
   executionTime?: number;
   timestamp?: number;
   source?: string;
   version?: string;
   serverId?: string;
-}
+};
 
 /**
  * Tool execution result
  */
-export interface ToolResult<T = JsonValue> extends Result<T, ErrorInfo> {
+export type ToolResult<T = JsonValue> = Result<T, ErrorInfo> & {
   success: boolean;
   data?: T;
   error?: ErrorInfo;
   metadata?: ToolResultMetadata;
-}
+};
 
 /**
  * Tool metadata for registration
  */
-export interface ToolMetadata {
+export type ToolMetadata = {
   category?: string;
   version?: string;
   author?: string;
   tags?: string[];
   documentation?: string;
   [key: string]: JsonValue | undefined;
-}
+};
+
+/**
+ * Tool call object type for type-safe access to tool call properties
+ */
+export type ToolCallObject = UnknownRecord & {
+  toolName?: string;
+  name?: string;
+  toolCallId?: string;
+  id?: string;
+  args?: UnknownRecord;
+  arguments?: UnknownRecord;
+};
+
+/**
+ * Tool execution context for tracking
+ */
+export type ToolExecutionContext = {
+  executionId: string;
+  tool: string;
+  startTime: number;
+  endTime?: number;
+  result?: unknown;
+  error?: string;
+  metadata?: JsonObject;
+};
+
+/**
+ * NeuroLink Native Event System Types
+ */
+
+/**
+ * Tool execution event for real-time streaming
+ */
+export type ToolExecutionEvent = {
+  type: "tool:start" | "tool:end";
+  tool: string;
+  input?: unknown;
+  result?: unknown;
+  error?: string;
+  timestamp: number;
+  duration?: number;
+  executionId: string;
+};
+
+/**
+ * Tool execution summary for completed executions
+ */
+export type ToolExecutionSummary = {
+  tool: string;
+  startTime: number;
+  endTime: number;
+  duration: number;
+  success: boolean;
+  result?: unknown;
+  error?: string;
+  executionId: string;
+  metadata?: {
+    serverId?: string;
+    toolCategory?: "direct" | "custom" | "mcp";
+    isExternal?: boolean;
+  };
+};
 
 /**
  * Tool definition interface
  */
-export interface ToolDefinition<TArgs = ToolArgs, TResult = JsonValue> {
+export type ToolDefinition<TArgs = ToolArgs, TResult = JsonValue> = {
   description: string;
   parameters?: ToolParameterSchema;
   metadata?: ToolMetadata;
@@ -102,91 +167,113 @@ export interface ToolDefinition<TArgs = ToolArgs, TResult = JsonValue> {
     params: TArgs,
     context?: ToolContext,
   ) => Promise<ToolResult<TResult>> | ToolResult<TResult>;
-}
+};
 
 /**
- * Simple tool interface (for SDK)
+ * Simple tool type (for SDK)
  */
-export interface SimpleTool<TArgs = ToolArgs, TResult = JsonValue> {
+export type SimpleTool<TArgs = ToolArgs, TResult = JsonValue> = {
   description: string;
   parameters?: ZodUnknownSchema;
   metadata?: ToolMetadata;
   execute: (params: TArgs, context?: ToolContext) => Promise<TResult>;
-}
+};
 
 /**
  * Tool registry entry
  */
-export interface ToolRegistryEntry {
+export type ToolRegistryEntry = {
   name: string;
   description: string;
   serverId?: string;
   isImplemented?: boolean;
   parameters?: ToolParameterSchema;
   execute?: ToolDefinition["execute"];
-}
+};
 
 /**
  * Tool execution information
  */
-export interface ToolExecution {
+export type ToolExecution = {
   toolName: string;
   params: ToolArgs;
   result: ToolResult;
   executionTime: number;
   timestamp: number;
-}
+};
+
+/**
+ * Pending tool execution type for Redis memory manager
+ * Temporary storage for tool execution data to avoid race conditions
+ */
+export type PendingToolExecution = {
+  toolCalls: Array<{
+    toolCallId?: string;
+    toolName?: string;
+    args?: Record<string, unknown>;
+    timestamp?: Date;
+    [key: string]: unknown;
+  }>;
+  toolResults: Array<{
+    toolCallId?: string;
+    result?: unknown;
+    error?: string;
+    timestamp?: Date;
+    [key: string]: unknown;
+  }>;
+  timestamp: number;
+};
 
 /**
  * Available tool information
  */
-export interface AvailableTool {
+export type AvailableTool = {
   name: string;
   description: string;
   serverId?: string;
   toolName?: string;
   parameters?: ToolParameterSchema;
-}
+};
 
 /**
  * Tool validation options
  */
-export interface ToolValidationOptions {
+export type ToolValidationOptions = {
   customValidator?: (
     toolName: string,
     params: ToolArgs,
   ) => boolean | Promise<boolean>;
   validateSchema?: boolean;
   allowUnknownProperties?: boolean;
-}
+};
 
 /**
  * Tool call information (for AI SDK integration)
  */
-export interface ToolCall {
+export type ToolCall = {
   toolName: string;
   parameters: ToolArgs;
   id?: string;
-}
+};
 
 /**
  * AI SDK Tool Call format (from Vercel AI SDK)
  */
-export interface AiSdkToolCall {
+export type AiSdkToolCall = {
   type: "tool-call";
   toolCallId: string;
   toolName: string;
   params: ToolArgs;
-}
+};
 
 /**
  * Tool call result (for AI SDK integration)
  */
-export interface ToolCallResult {
+export type ToolCallResult = {
   id?: string;
   result: ToolResult;
   formattedForAI: string;
-}
+};
 
 /**
  * Type guard for tool result
