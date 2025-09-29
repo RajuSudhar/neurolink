@@ -287,18 +287,8 @@ export function getPerformanceConfig(
   return PERFORMANCE_PROFILES[loadKey] ?? PERFORMANCE_PROFILES.NORMAL_LOAD;
 }
 
-// ===== TYPE EXPORTS =====
-
-/**
- * Type definitions for configuration objects
- */
-export type TimeoutCategory = keyof typeof TOOL_TIMEOUTS;
-export type RetryStrategy = keyof typeof BACKOFF_CONFIG;
-export type PerformanceProfile = keyof typeof PERFORMANCE_PROFILES;
-export type ProviderConfig =
-  (typeof PROVIDER_OPERATION_CONFIGS)[keyof typeof PROVIDER_OPERATION_CONFIGS];
-export type McpConfig =
-  (typeof MCP_OPERATION_CONFIGS)[keyof typeof MCP_OPERATION_CONFIGS];
+// Type definitions moved to ../types/constants.js
+// Import them from there if needed: import type { DerivedTimeoutCategory, ... } from "../types/constants.js";
 
 // ===== VERSION AND METADATA =====
 

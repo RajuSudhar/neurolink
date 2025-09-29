@@ -6,21 +6,9 @@
  */
 
 import { logger } from "../../utils/logger.js";
+import type { AdaptiveSemaphoreConfig, AdaptiveSemaphoreMetrics } from "../../types/providers.js";
 
-export interface AdaptiveSemaphoreConfig {
-  initialConcurrency: number;
-  maxConcurrency: number;
-  minConcurrency: number;
-}
-
-export interface AdaptiveSemaphoreMetrics {
-  activeRequests: number;
-  currentConcurrency: number;
-  completedCount: number;
-  errorCount: number;
-  averageResponseTime: number;
-  waitingCount: number;
-}
+// Type definitions moved to ../../types/providers.js
 
 /**
  * Adaptive semaphore that automatically adjusts concurrency based on performance metrics
@@ -33,6 +21,10 @@ export class AdaptiveSemaphore {
   private completedCount: number = 0;
   private errorCount: number = 0;
   private responseTimes: number[] = [];
+  private totalAcquired: number = 0;
+  private totalReleased: number = 0;
+  private adaptations: number = 0;
+  private lastAdaptationTime: number = 0;
 
   private readonly maxConcurrency: number;
   private readonly minConcurrency: number;
@@ -58,11 +50,13 @@ export class AdaptiveSemaphore {
       if (this.count > 0) {
         this.count--;
         this.activeRequests++;
+        this.totalAcquired++;
         resolve();
       } else {
         this.waiters.push(() => {
           this.count--;
           this.activeRequests++;
+          this.totalAcquired++;
           resolve();
         });
       }
@@ -74,6 +68,7 @@ export class AdaptiveSemaphore {
    */
   release(): void {
     this.activeRequests--;
+    this.totalReleased++;
     if (this.waiters.length > 0) {
       const waiter = this.waiters.shift();
       if (waiter) {
@@ -128,6 +123,12 @@ export class AdaptiveSemaphore {
     this.count += diff;
     this.currentConcurrency = clampedLimit;
 
+    // Track adaptation metrics
+    if (diff !== 0) {
+      this.adaptations++;
+      this.lastAdaptationTime = Date.now();
+    }
+
     logger.debug("Concurrency adjusted", {
       newConcurrency: clampedLimit,
       previousConcurrency: this.currentConcurrency - diff,
@@ -161,6 +162,10 @@ export class AdaptiveSemaphore {
       errorCount: this.errorCount,
       averageResponseTime,
       waitingCount: this.waiters.length,
+      totalAcquired: this.totalAcquired,
+      totalReleased: this.totalReleased,
+      adaptations: this.adaptations,
+      lastAdaptationTime: this.lastAdaptationTime,
     };
   }
 

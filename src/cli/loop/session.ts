@@ -5,7 +5,7 @@ import { logger } from "../../lib/utils/logger.js";
 import { globalSession } from "../../lib/session/globalSessionState.js";
 import type { ConversationMemoryConfig } from "../../lib/types/conversation.js";
 import { textGenerationOptionsSchema } from "./optionsSchema.js";
-import type { OptionSchema } from "./optionsSchema.js";
+import { OptionSchema } from "../../lib/types/cli.js";
 import { handleError } from "../errorHandler.js";
 
 // Banner Art

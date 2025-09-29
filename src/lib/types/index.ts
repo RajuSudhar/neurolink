@@ -177,6 +177,10 @@ export type {
   OptionsConversionResult,
   PromptRedactionConfig,
   MessageBuilderOptions,
+  ProviderStatus,
+  MCPStatus,
+  ParsedProxyConfig,
+  Mem0Memory,
 } from "./utilities.js";
 
 // Middleware Types - Middleware system types
@@ -199,3 +203,10 @@ export type {
 
 // Constants Types - Constants module types
 export * from "./constants.js";
+export type {
+  DerivedTimeoutCategory,
+  DerivedRetryStrategy,
+  DerivedPerformanceProfile,
+  DerivedProviderConfig,
+  DerivedMcpConfig,
+} from "./constants.js";

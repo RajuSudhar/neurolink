@@ -762,3 +762,32 @@ export const DEFAULT_PROVIDER_CONFIGS: AIModelProviderConfig[] = [
     models: [OpenAIModels.GPT_4O, OpenAIModels.GPT_4O_MINI],
   },
 ];
+
+// ============================================================================
+// SageMaker Provider Types (moved from providers/sagemaker/ files)
+// ============================================================================
+
+/**
+ * Adaptive semaphore configuration for SageMaker
+ */
+export type AdaptiveSemaphoreConfig = {
+  initialConcurrency: number;
+  maxConcurrency: number;
+  minConcurrency: number;
+};
+
+/**
+ * Adaptive semaphore metrics for SageMaker
+ */
+export type AdaptiveSemaphoreMetrics = {
+  activeRequests: number;
+  currentConcurrency: number;
+  completedCount: number;
+  errorCount: number;
+  averageResponseTime: number;
+  waitingCount: number;
+  totalAcquired: number;
+  totalReleased: number;
+  adaptations: number;
+  lastAdaptationTime: number;
+};

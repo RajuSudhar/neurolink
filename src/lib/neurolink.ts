@@ -20,6 +20,9 @@ import type {
   TextGenerationOptions,
   TextGenerationResult,
   AnalyticsData,
+  ProviderStatus,
+  MCPStatus,
+  Mem0Memory,
 } from "./types/index.js";
 import { AIProviderFactory } from "./core/factory.js";
 
@@ -127,33 +130,7 @@ import { ModelRouter } from "./utils/modelRouter.js";
 import { BinaryTaskClassifier } from "./utils/taskClassifier.js";
 import type { MemoryConfig } from "mem0ai/oss";
 
-// Provider and MCP diagnostic types
-export interface ProviderStatus {
-  provider: string;
-  status: "working" | "failed" | "not-configured";
-  configured: boolean;
-  authenticated: boolean;
-  error?: string;
-  responseTime?: number;
-  model?: string;
-}
-
-export interface MCPStatus {
-  mcpInitialized: boolean;
-  totalServers: number;
-  availableServers: number;
-  autoDiscoveredCount: number;
-  totalTools: number;
-  autoDiscoveredServers: MCPServerInfo[];
-  customToolsCount: number;
-  inMemoryServersCount: number;
-  externalMCPServersCount?: number;
-  externalMCPConnectedCount?: number;
-  externalMCPFailedCount?: number;
-  externalMCPServers?: MCPServerInfo[];
-  error?: string;
-  [key: string]: unknown; // Add index signature for flexible object access
-}
+// Provider and MCP diagnostic types moved to ./types/utilities.js
 
 import { isNonNullObject } from "./utils/typeUtils.js";
 import { isZodSchema } from "./utils/schemaConversion.js";
@@ -241,9 +218,7 @@ export class NeuroLink {
   private hitlManager?: HITLManager;
 
   // Mem0 memory instance and config for conversation context
-  private mem0Instance?:
-    | import("./memory/mem0Initializer.js").Mem0Memory
-    | null;
+  private mem0Instance?: Mem0Memory | null;
   private mem0Config?: MemoryConfig;
 
   /**
@@ -262,9 +237,7 @@ export class NeuroLink {
   /**
    * Async initialization called during generate/stream
    */
-  private async ensureMem0Ready(): Promise<
-    import("./memory/mem0Initializer.js").Mem0Memory | null
-  > {
+  private async ensureMem0Ready(): Promise<Mem0Memory | null> {
     if (this.mem0Instance !== undefined) {
       return this.mem0Instance;
     }

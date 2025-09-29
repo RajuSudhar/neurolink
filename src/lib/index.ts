@@ -54,7 +54,7 @@ export type { DynamicModelConfig, ModelRegistry } from "./types/modelTypes.js";
 // Main NeuroLink wrapper class and diagnostic types
 import { NeuroLink } from "./neurolink.js";
 export { NeuroLink };
-export type { ProviderStatus, MCPStatus } from "./neurolink.js";
+// ProviderStatus and MCPStatus moved to ./types/utilities.js
 export type { MCPServerInfo } from "./types/mcpTypes.js";
 
 // Middleware exports

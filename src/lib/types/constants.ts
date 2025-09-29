@@ -52,3 +52,20 @@ export type ConstantsMetadata = {
   category: string;
   description?: string;
 };
+
+// ============================================================================
+// Derived Types (moved from constants/index.ts)
+// ============================================================================
+
+/**
+ * Type definitions derived from configuration objects
+ * Note: These reference the actual configuration objects from constants/index.ts
+ */
+
+// These are intentionally derived types that reference the actual objects
+// They will be properly typed when the constants are imported and used
+export type DerivedTimeoutCategory = string; // keyof typeof TOOL_TIMEOUTS
+export type DerivedRetryStrategy = string; // keyof typeof BACKOFF_CONFIG
+export type DerivedPerformanceProfile = string; // keyof typeof PERFORMANCE_PROFILES
+export type DerivedProviderConfig = Record<string, unknown>; // from PROVIDER_OPERATION_CONFIGS
+export type DerivedMcpConfig = Record<string, unknown>; // from MCP_OPERATION_CONFIGS

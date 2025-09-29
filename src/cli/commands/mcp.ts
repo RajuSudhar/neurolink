@@ -12,7 +12,8 @@ import type {
 } from "../../lib/types/mcpTypes.js";
 import { createExternalServerInfo } from "../../lib/utils/mcpDefaults.js";
 import type { MCPCommandArgs } from "../../lib/types/cli.js";
-import { NeuroLink, type MCPStatus } from "../../lib/neurolink.js";
+import { NeuroLink } from "../../lib/neurolink.js";
+import type { MCPStatus } from "../../lib/types/utilities.js";
 import { logger } from "../../lib/utils/logger.js";
 import chalk from "chalk";
 import ora from "ora";
