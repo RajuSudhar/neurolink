@@ -1,3 +1,9 @@
+## [7.53.0](https://github.com/juspay/neurolink/compare/v7.52.0...v7.53.0) (2025-10-26)
+
+### Features
+
+- **(test):** vitest configuration setup for cli ([ffb7db3](https://github.com/juspay/neurolink/commit/ffb7db301e2e883af5427db6e6d00a8a7dd65023))
+
 ## [7.52.0](https://github.com/juspay/neurolink/compare/v7.51.3...v7.52.0) (2025-10-24)
 
 ### Features
