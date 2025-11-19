@@ -1,3 +1,30 @@
+## [8.0.0](https://github.com/juspay/neurolink/compare/v7.54.0...v8.0.0) (2025-11-19)
+
+### ⚠ BREAKING CHANGES
+
+- **(deps):** Node.js 20.18.1+ is now required due to undici v7 dependency.
+  Undici v7 requires the File API which is only available in Node.js 20.18.1+.
+
+Changes:
+
+- Update fileDetector.ts to use interceptors.redirect()
+- Update messageBuilder.ts to use interceptors.redirect()
+- Add getGlobalDispatcher and interceptors imports from undici
+- Temporarily exclude known package vulnerabilities from security validation
+- Require Node.js >=20.18.1 in package.json engines
+- Update npm requirement to >=10.0.0
+- Remove Node 18 from CI test matrix
+
+Fixes build failures introduced in f19c433 (undici bump to v7)
+
+### Features
+
+- **(observability):** add support for userid and sessionid in langfuse traces ([b1895a6](https://github.com/juspay/neurolink/commit/b1895a622edbba9c7c360069b411a0c575a271cb))
+
+### Bug Fixes
+
+- **(deps):** update undici v7 API usage and require Node.js 20+ ([dc81bba](https://github.com/juspay/neurolink/commit/dc81bba41b47c37340ec9a9d7c9f0d733c06adae))
+
 ## [7.54.0](https://github.com/juspay/neurolink/compare/v7.53.5...v7.54.0) (2025-11-08)
 
 ### Features
