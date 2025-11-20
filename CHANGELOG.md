@@ -1,3 +1,9 @@
+## [8.1.0](https://github.com/juspay/neurolink/compare/v8.0.1...v8.1.0) (2025-11-20)
+
+### Features
+
+- **(vertex):** add gemini-3-pro-preview model support ([896dc73](https://github.com/juspay/neurolink/commit/896dc73f017cf2c5c3a1cdbfa1806027e6acad4a))
+
 ## [8.0.1](https://github.com/juspay/neurolink/compare/v8.0.0...v8.0.1) (2025-11-20)
 
 ### Bug Fixes
