@@ -1,3 +1,9 @@
+## [8.12.0](https://github.com/juspay/neurolink/compare/v8.11.0...v8.12.0) (2025-12-13)
+
+### Features
+
+- **(files):** Install office processing dependencies: mammoth, xlsx, adm-zip, xml2js with TypeScript types ([a236818](https://github.com/juspay/neurolink/commit/a2368182e99b58a599e77e43e823439464a2f829))
+
 ## [8.11.0](https://github.com/juspay/neurolink/compare/v8.10.1...v8.11.0) (2025-12-12)
 
 ### Features
