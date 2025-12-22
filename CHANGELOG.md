@@ -1,3 +1,9 @@
+## [8.20.0](https://github.com/juspay/neurolink/compare/v8.19.1...v8.20.0) (2025-12-22)
+
+### Features
+
+- **(memory):** Implement token based summarization ([ffdc902](https://github.com/juspay/neurolink/commit/ffdc902f534c97a5aff38d7de419021fcabcd791))
+
 ## [8.19.1](https://github.com/juspay/neurolink/compare/v8.19.0...v8.19.1) (2025-12-20)
 
 ### Bug Fixes
