@@ -1,3 +1,9 @@
+## [8.25.0](https://github.com/juspay/neurolink/compare/v8.24.0...v8.25.0) (2025-12-30)
+
+### Features
+
+- **(observability):** Add support for custom metadata in Context ([b175249](https://github.com/juspay/neurolink/commit/b175249c61357b0e6d127932bd7824d0bfe6f2ed))
+
 ## [8.24.0](https://github.com/juspay/neurolink/compare/v8.23.2...v8.24.0) (2025-12-28)
 
 ### Features
