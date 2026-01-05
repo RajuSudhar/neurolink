@@ -1,3 +1,9 @@
+## [8.31.3](https://github.com/juspay/neurolink/compare/v8.31.2...v8.31.3) (2026-01-05)
+
+### Bug Fixes
+
+- **(csv):** standardize rowCount to exclude empty lines across all formats (CSV-025) ([c898521](https://github.com/juspay/neurolink/commit/c8985212ff6bb43a6cefbf7a5551ed603b32bc55)), closes [#390](https://github.com/juspay/neurolink/issues/390)
+
 ## [8.31.2](https://github.com/juspay/neurolink/compare/v8.31.1...v8.31.2) (2026-01-05)
 
 ### Bug Fixes
