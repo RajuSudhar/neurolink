@@ -1,3 +1,9 @@
+## [8.36.0](https://github.com/juspay/neurolink/compare/v8.35.2...v8.36.0) (2026-01-22)
+
+### Features
+
+- **(ppt):** Add Types and Validation for PPT generation ([27b970c](https://github.com/juspay/neurolink/commit/27b970c9fd5d74161b74603738ca307f8217e287))
+
 ## [8.35.2](https://github.com/juspay/neurolink/compare/v8.35.1...v8.35.2) (2026-01-15)
 
 ### Bug Fixes
