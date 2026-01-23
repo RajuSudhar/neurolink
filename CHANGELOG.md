@@ -1,3 +1,9 @@
+## [8.38.0](https://github.com/juspay/neurolink/compare/v8.37.0...v8.38.0) (2026-01-23)
+
+### Features
+
+- **(ppt):** Add PPT generation content planner ([695b92c](https://github.com/juspay/neurolink/commit/695b92c8d2c87556fcad3d5f437605ba934e8b5d))
+
 ## [8.37.0](https://github.com/juspay/neurolink/compare/v8.36.0...v8.37.0) (2026-01-22)
 
 ### Features
