@@ -1,3 +1,9 @@
+## [8.42.0](https://github.com/juspay/neurolink/compare/v8.41.1...v8.42.0) (2026-02-02)
+
+### Features
+
+- **(cache):** Implemented LRU cache for image downloads ([6562c45](https://github.com/juspay/neurolink/commit/6562c45605a6031afe41bdfcc5de0a7687127c3f))
+
 ## [8.41.1](https://github.com/juspay/neurolink/compare/v8.41.0...v8.41.1) (2026-01-31)
 
 ### Bug Fixes
