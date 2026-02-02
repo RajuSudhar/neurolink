@@ -1,3 +1,9 @@
+## [8.43.0](https://github.com/juspay/neurolink/compare/v8.42.0...v8.43.0) (2026-02-02)
+
+### Features
+
+- **(server):** implement multi-framework HTTP server adapters with full CLI support ([1651938](https://github.com/juspay/neurolink/commit/16519387ac4b6480ac779eb7b5cd90eb2cdee6e7))
+
 ## [8.42.0](https://github.com/juspay/neurolink/compare/v8.41.1...v8.42.0) (2026-02-02)
 
 ### Features
