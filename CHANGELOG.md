@@ -1,3 +1,9 @@
+## [9.1.0](https://github.com/juspay/neurolink/compare/v9.0.1...v9.1.0) (2026-02-05)
+
+### Features
+
+- **(ppt):** Implement Orchestration and Assembly layer For PPT Gen ([7e53846](https://github.com/juspay/neurolink/commit/7e53846815a14e6b4793e31048efe121bbc84ef5))
+
 ## [9.0.1](https://github.com/juspay/neurolink/compare/v9.0.0...v9.0.1) (2026-02-03)
 
 ### Bug Fixes
