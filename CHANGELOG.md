@@ -1,3 +1,9 @@
+## [9.2.0](https://github.com/juspay/neurolink/compare/v9.1.1...v9.2.0) (2026-02-06)
+
+### Features
+
+- **(multimodal):** add file processor system with 17+ file types and SVG text injection ([9a7b585](https://github.com/juspay/neurolink/commit/9a7b5851e562f7bd55164d1c3dca42d8f18cc827))
+
 ## [9.1.1](https://github.com/juspay/neurolink/compare/v9.1.0...v9.1.1) (2026-02-05)
 
 ### Bug Fixes
