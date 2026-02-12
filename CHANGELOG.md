@@ -1,3 +1,9 @@
+## [9.5.1](https://github.com/juspay/neurolink/compare/v9.5.0...v9.5.1) (2026-02-12)
+
+### Bug Fixes
+
+- **(landing):** sync lockfile with corrected deps and add blog links ([346d327](https://github.com/juspay/neurolink/commit/346d327fb895ee72f7e96b4d48f6d860cc05747c))
+
 ## [9.5.0](https://github.com/juspay/neurolink/compare/v9.4.0...v9.5.0) (2026-02-12)
 
 ### Features
