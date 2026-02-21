@@ -1,3 +1,9 @@
+## [9.10.1](https://github.com/juspay/neurolink/compare/v9.10.0...v9.10.1) (2026-02-21)
+
+### Bug Fixes
+
+- **(video-analysis):** add stream support for video analysis ([938aeef](https://github.com/juspay/neurolink/commit/938aeef876277360700d2a7192155af1f1316f28))
+
 ## [9.10.0](https://github.com/juspay/neurolink/compare/v9.9.0...v9.10.0) (2026-02-20)
 
 ### Features
