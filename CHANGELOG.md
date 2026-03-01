@@ -1,3 +1,9 @@
+## [9.15.0](https://github.com/juspay/neurolink/compare/v9.14.0...v9.15.0) (2026-03-01)
+
+### Features
+
+- **(anthropic):** add Claude subscription support with OAuth 2.0 authentication ([dbe0eb0](https://github.com/juspay/neurolink/commit/dbe0eb0219c565b2329f81e4f254849315c901a2))
+
 ## [9.14.0](https://github.com/juspay/neurolink/compare/v9.13.0...v9.14.0) (2026-02-27)
 
 ### Features
