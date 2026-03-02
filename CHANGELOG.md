@@ -1,3 +1,9 @@
+## [9.16.0](https://github.com/juspay/neurolink/compare/v9.15.0...v9.16.0) (2026-03-02)
+
+### Features
+
+- **(sdk):** add models, observability, RAG enhancements, landing overhaul, and 45 review fixes ([eb79a1f](https://github.com/juspay/neurolink/commit/eb79a1f51dfd789da49130b6a05fa40ed38fd668))
+
 ## [9.15.0](https://github.com/juspay/neurolink/compare/v9.14.0...v9.15.0) (2026-03-01)
 
 ### Features
