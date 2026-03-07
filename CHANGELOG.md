@@ -1,3 +1,9 @@
+## [9.17.2](https://github.com/juspay/neurolink/compare/v9.17.1...v9.17.2) (2026-03-07)
+
+### Bug Fixes
+
+- **(docs):** fall back to local search when Algolia index doesn't exist ([93f92b6](https://github.com/juspay/neurolink/commit/93f92b6a5c898b099e4684cadfd793a807752091))
+
 ## [9.17.1](https://github.com/juspay/neurolink/compare/v9.17.0...v9.17.1) (2026-03-07)
 
 ### Bug Fixes
