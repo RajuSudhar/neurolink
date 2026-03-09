@@ -1,3 +1,9 @@
+## [9.21.0](https://github.com/juspay/neurolink/compare/v9.20.0...v9.21.0) (2026-03-09)
+
+### Features
+
+- **(reports-conversation):** Add support for report metaData in getUserAllSessionsHistory ([2273af0](https://github.com/juspay/neurolink/commit/2273af00f2089dba4f691f771b8e16a6a71274b5))
+
 ## [9.20.0](https://github.com/juspay/neurolink/compare/v9.19.1...v9.20.0) (2026-03-09)
 
 ### Features
