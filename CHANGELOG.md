@@ -1,3 +1,9 @@
+## [9.22.2](https://github.com/juspay/neurolink/compare/v9.22.1...v9.22.2) (2026-03-12)
+
+### Bug Fixes
+
+- **(observability):** prevent duplicate Langfuse traces from streaming by restricting trace attributes to root spans ([ddac782](https://github.com/juspay/neurolink/commit/ddac78229f7ed42a1d332c23e0a5e6d80418dd6a))
+
 ## [9.22.1](https://github.com/juspay/neurolink/compare/v9.22.0...v9.22.1) (2026-03-12)
 
 ### Bug Fixes
