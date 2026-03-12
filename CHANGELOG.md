@@ -1,3 +1,9 @@
+## [9.22.3](https://github.com/juspay/neurolink/compare/v9.22.2...v9.22.3) (2026-03-12)
+
+### Bug Fixes
+
+- **(landing):** improve mobile accessibility and touch targets ([98f3f53](https://github.com/juspay/neurolink/commit/98f3f53d9d815d84486194aae8ebd41879009e5d))
+
 ## [9.22.2](https://github.com/juspay/neurolink/compare/v9.22.1...v9.22.2) (2026-03-12)
 
 ### Bug Fixes
