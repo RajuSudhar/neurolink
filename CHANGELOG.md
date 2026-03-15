@@ -1,3 +1,9 @@
+## [9.25.0](https://github.com/juspay/neurolink/compare/v9.24.0...v9.25.0) (2026-03-15)
+
+### Features
+
+- **(observability):** add OTEL instrumentation, observability exporters, and comprehensive test suite fixes ([66c4559](https://github.com/juspay/neurolink/commit/66c45592cfcf5ae5acbec0513231f48e87044dab))
+
 ## [9.24.0](https://github.com/juspay/neurolink/compare/v9.23.0...v9.24.0) (2026-03-14)
 
 ### Features
