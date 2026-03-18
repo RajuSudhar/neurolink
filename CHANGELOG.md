@@ -1,3 +1,9 @@
+## [9.26.2](https://github.com/juspay/neurolink/compare/v9.26.1...v9.26.2) (2026-03-18)
+
+### Bug Fixes
+
+- **(providers):** fix Gemini 3.1 native SDK tool calling, streaming, and multimodal on Vertex global endpoint ([b95089a](https://github.com/juspay/neurolink/commit/b95089a5bc900b38678b919a6ae2567c9500ca8b))
+
 ## [9.26.1](https://github.com/juspay/neurolink/compare/v9.26.0...v9.26.1) (2026-03-16)
 
 ### Bug Fixes
