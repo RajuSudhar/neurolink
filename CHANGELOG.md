@@ -1,3 +1,9 @@
+## [9.32.0](https://github.com/juspay/neurolink/compare/v9.31.2...v9.32.0) (2026-03-25)
+
+### Features
+
+- **(auth):** add authentication providers system with 12 providers, middleware, RBAC, and session management ([97dabd9](https://github.com/juspay/neurolink/commit/97dabd9f58b3506d13faa626359b5c9e0b1cadd9))
+
 ## [9.31.2](https://github.com/juspay/neurolink/compare/v9.31.1...v9.31.2) (2026-03-25)
 
 ### Bug Fixes
