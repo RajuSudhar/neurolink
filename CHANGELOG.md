@@ -1,3 +1,5 @@
+## [9.44.1](https://github.com/juspay/neurolink/compare/v9.44.0...v9.44.1) (2026-04-03)
+
 ## [9.44.0](https://github.com/juspay/neurolink/compare/v9.43.0...v9.44.0) (2026-04-02)
 
 ### Features
