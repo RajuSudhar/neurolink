@@ -1,3 +1,9 @@
+## [9.46.1](https://github.com/juspay/neurolink/compare/v9.46.0...v9.46.1) (2026-04-04)
+
+### Bug Fixes
+
+- **(proxy):** PID-scoped token store temp files and dynamic launchd PATH ([dc63fa8](https://github.com/juspay/neurolink/commit/dc63fa80690d214105ccc42705bac7b821395b52))
+
 ## [9.46.0](https://github.com/juspay/neurolink/compare/v9.45.0...v9.46.0) (2026-04-04)
 
 ### Features
