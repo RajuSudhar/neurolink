@@ -1,3 +1,15 @@
+## [9.45.0](https://github.com/juspay/neurolink/compare/v9.44.1...v9.45.0) (2026-04-04)
+
+### Features
+
+- **(image):** implement JPEG dimension extraction via SOF marker parsing ([9fac5cb](https://github.com/juspay/neurolink/commit/9fac5cb883fcd1a3550160ecc546146ccc3a3407))
+
+### Bug Fixes
+
+- **(ci):** pin npm to v10 instead of latest in release workflow ([357ccf3](https://github.com/juspay/neurolink/commit/357ccf36b8a038a29b11b67988b3c30192fcc636))
+- **(mb):** Make text optional when multimodal content present ([ae12580](https://github.com/juspay/neurolink/commit/ae125808cc9853e56ef62957210332da702695e4))
+- **(utils):** add content-length:0 validation in URL downloader ([8fcb795](https://github.com/juspay/neurolink/commit/8fcb795e28fb3687341eb4e3853479a1bdc2d7f7)), closes [#549](https://github.com/juspay/neurolink/issues/549)
+
 ## [9.44.1](https://github.com/juspay/neurolink/compare/v9.44.0...v9.44.1) (2026-04-03)
 
 ## [9.44.0](https://github.com/juspay/neurolink/compare/v9.43.0...v9.44.0) (2026-04-02)
