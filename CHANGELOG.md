@@ -1,3 +1,9 @@
+## [9.50.1](https://github.com/juspay/neurolink/compare/v9.50.0...v9.50.1) (2026-04-09)
+
+### Bug Fixes
+
+- **(proxy):** streaming fallback reliability and observability ([0b75a2b](https://github.com/juspay/neurolink/commit/0b75a2bd7720189c0206a7a547ff32c0a6500062))
+
 ## [9.50.0](https://github.com/juspay/neurolink/compare/v9.49.0...v9.50.0) (2026-04-08)
 
 ### Features
