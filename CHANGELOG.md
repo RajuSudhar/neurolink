@@ -1,3 +1,9 @@
+## [9.54.3](https://github.com/juspay/neurolink/compare/v9.54.2...v9.54.3) (2026-04-13)
+
+### Bug Fixes
+
+- **(sdk):** schema-driven tool call repair, graceful abort, fallback provider (BZ-665, BZ-667, BZ-1341) ([fd74ae4](https://github.com/juspay/neurolink/commit/fd74ae4cf91f671ede17f8f9692a6c9dd7268d6a))
+
 ## [9.54.2](https://github.com/juspay/neurolink/compare/v9.54.1...v9.54.2) (2026-04-12)
 
 ### Bug Fixes
